@@ -24,12 +24,17 @@ while True:
                 clase = input("Ingrese clase : ").title()
                 nivel = int(input("Ingrese nivel : "))
                 agregar(nombre, clase, nivel)
-
-            case 2: pass
-            case 3: pass
-            case 4: pass
+            case 2: 
+                nombre = input("Ingrese nombre : ").title()
+                mostrar(nombre)
+            case 3: 
+                nombre = input("Ingrese nombre a eliminar : ").title()
+                eliminar(nombre)
+            case 4: 
+                nombre = input("Ingrese nombre : ").title()
+                subir_nivel(nombre)
             case 5: pass
-            case 6: pass
+            case 6: listar()
             case 7: break
             case _: print("No válido")
 
