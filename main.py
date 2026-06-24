@@ -19,14 +19,19 @@ while True:
         opcion = int(input("Seleccione : "))
 
         match opcion:
-            case 1: pass
+            case 1: 
+                nombre = input("Ingrese nombre : ").title()
+                clase = input("Ingrese clase : ").title()
+                nivel = int(input("Ingrese nivel : "))
+                agregar(nombre, clase, nivel)
+
             case 2: pass
             case 3: pass
             case 4: pass
             case 5: pass
             case 6: pass
-            case 7: pass
-            case _: pass
+            case 7: break
+            case _: print("No válido")
 
     except Exception as e:
         print(f"Error: {e}")
