@@ -33,7 +33,7 @@ while True:
             case 4: 
                 nombre = input("Ingrese nombre : ").title()
                 subir_nivel(nombre)
-            case 5: pass
+            case 5: estadisticas()
             case 6: listar()
             case 7: break
             case _: print("No válido")

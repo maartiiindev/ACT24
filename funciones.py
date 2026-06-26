@@ -30,7 +30,7 @@ def agregar(nombre, clase, nivel):
 def mostrar(nombre):
     posicion = buscar(nombre)
     if posicion >= 0:
-        print(f"Personaje encontrado : {personajes[posicion]}")
+        print(f"Personaje encontrado : Nombre: {personajes[posicion]["nombre"]}, Clase: {personajes[posicion]["clase"]}, Nivel: {personajes[posicion]["nivel"]}, Rango: {personajes[posicion]["rango"]}")
     else:
         print("Nombre no existente")
 
@@ -45,7 +45,7 @@ def listar():
 def eliminar(nombre):
     posicion = buscar(nombre)
     if posicion >= 0:
-        personajes.remove(personajes[posicion])
+        personajes.pop(posicion)
         print("Personaje eliminado")
     else:
         print("Personaje no existente")
@@ -63,3 +63,19 @@ def subir_nivel(nombre):
             print("Ya ha alcanzado el nivel máximo")
     else:
         print("Personaje no existente")
+
+def estadisticas():
+    sumanivel, guerreros, magos, picaros = 0, 0, 0, 0
+    for pj in personajes:
+        sumanivel += pj["nivel"]
+        match pj["clase"]:
+            case "Guerrero": guerreros+=1
+            case "Mago": magos+=1
+            case "Pícaro": picaros+=1
+    promedio = round(sumanivel/len(personajes) ,1)
+    print(f"""
+Nivel promedio del gremio : {promedio}
+Cantidad de Guerreros : {guerreros}
+Cantidad de Magos : {magos}
+Cantidad de Pícaros : {picaros}
+""")
